@@ -1,0 +1,21 @@
+{
+  "metric_thread": {
+    "keep_dot": true,
+    "max_extra": 2,
+    "enabled": true
+  },
+  "hyphen_thread": {
+    "x_variant": true,
+    "space_variant": true,
+    "max_extra": 2
+  },
+  "family_hyphen": {
+    "xhhw2": true,
+    "xhhw 2": true,
+    "max_extra": 2
+  },
+  "strand_alias": {
+    "enabled": true,
+    "max_extra": 2
+  }
+}

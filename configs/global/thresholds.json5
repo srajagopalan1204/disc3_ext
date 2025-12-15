@@ -1,0 +1,9 @@
+{
+  "inputs": {
+    "pricing": true,
+    "po": false
+  },
+  "trim_alert_pct": 15,
+  "p95_len_alert": 245,
+  "fuzzy_threshold": 0.92
+}

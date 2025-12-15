@@ -1,0 +1,36 @@
+{
+  "pline3": "bli",
+  "colors": {
+    "bk": "black",
+    "br": "brown",
+    "bu": "blue",
+    "gn": "green",
+    "gy": "gray",
+    "or": "orange",
+    "pk": "pink",
+    "pr": "purple",
+    "rd": "red",
+    "wh": "white",
+    "yl": "yellow"
+  },
+  "materials": {
+    "cu": "copper",
+    "al": "aluminum"
+  },
+  "uom_terms": [
+    "ft",
+    "piece",
+    "rack",
+    "reel",
+    "each"
+  ],
+  "families": {
+    "thhn": "thhn",
+    "mtw": "mtw",
+    "xhhw-2": "xhhw-2"
+  },
+  "pricing_synonyms": {
+    "zn": "zinc",
+    "pltd": "plated"
+  }
+}

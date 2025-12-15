@@ -1,0 +1,9 @@
+# outputs & working files
+rep/
+data/archive/
+decisions/out/
+decisions/archive/
+prev/
+*.xlsx
+*.csv
+*.log

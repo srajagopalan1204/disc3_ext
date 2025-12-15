@@ -1,0 +1,7 @@
+{
+  "pline3": "cdw",
+
+  // (Optional) If you want CDW to behave differently than global:
+  // "squelch_repeated_stars": true,   // line-level override of global (true/false)
+  // "extra_separators": ["(", ")"]    // line-level separators; merged with global
+}

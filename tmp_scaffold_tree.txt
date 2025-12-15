@@ -1,0 +1,24 @@
+5  [error opening dir]
+/workspaces/disc3_ext/tmp_scaffold
+├── README.md
+├── configs
+│   ├── global
+│   │   ├── schema_lock.json
+│   │   └── thresholds.json5
+│   └── lines
+│       ├── bli.json5
+│       ├── bli_patterns.json5
+│       └── bli_thresholds.json5
+├── docs
+│   └── README.txt
+├── scripts
+│   ├── run_all.ps1
+│   └── run_line.ps1
+└── src
+    ├── build_desc3.py
+    ├── io_schemas.py
+    ├── join_utils.py
+    ├── qa_metrics.py
+    └── token_packs.py
+
+7 directories, 14 files

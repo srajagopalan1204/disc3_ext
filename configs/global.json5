@@ -1,0 +1,5 @@
+{
+  // Global defaults for all lines
+  "squelch_repeated_stars": true,      // collapse "**", "***", etc. to space
+  "extra_separators": ["(", ")"]       // treat these like separators (same as "/" or "-")
+}
