@@ -78,6 +78,10 @@ The exact dryrun command (LEV)
 
 Once files are in place:
 
+location and source of file 
+--saamm "C:\Users\scottuser\Documents\SAAMM_WIP\SAAMM_XL\SAAMM_LEV_leviton_100795_1507.csv"
+--pricing "C:\Users\scottuser\Documents\SAAMM_WIP\Pricing\LEV_LEVITON_with_descriptions.xlsx"
+
 python src/build_desc3_enh.py \
   --line lev \
   --saamm  data/saamm/SAAMM_LEV_leviton_100795_1507.csv \

@@ -1,0 +1,76 @@
+{
+  "pline3": "bli",
+  "colors": {
+    "bk": "black",
+    "br": "brown",
+    "bu": "blue",
+    "gn": "green",
+    "gy": "gray",
+    "or": "orange",
+    "pk": "pink",
+    "pr": "purple",
+    "rd": "red",
+    "wh": "white",
+    "yl": "yellow"
+  },
+  "materials": {
+    "cu": "copper",
+    "al": "aluminum",
+    "zn": "zinc",
+    "ss": "stainless steel"
+  },
+  "uom_terms": [
+    "ft",
+    "piece",
+    "rack",
+    "reel",
+    "each"
+  ],
+  "families": {
+    "thhn": "thhn",
+    "mtw": "mtw",
+    "xhhw-2": "xhhw-2"
+  },
+  "pricing_synonyms": {
+    "zn": "zinc",
+    "pltd": "plated"
+  },
+  "synonyms": {
+    "cu": "copper",
+    "al": "aluminum",
+    "zn": "zinc",
+    "ss": "stainless steel",
+    "bk": "black",
+    "wht": "white",
+    "wh": "white",
+    "gry": "gray",
+    "rd": "red",
+    "yl": "yellow",
+    "bu": "blue",
+    "gn": "green",
+    "brkt": "bracket",
+    "brs": "brass",
+    "bx": "box",
+    "cbl": "cable",
+    "emt": "emt",
+    "rig": "rigid",
+    "str": "strap",
+    "stud": "stud",
+    "mtl": "metal",
+    "flng": "flange",
+    "fl": "flange",
+    "clip": "clip",
+    "hanger": "hanger"
+  },
+  "glue_bigrams": {
+    "ha nger": "hanger",
+    "hang er": "hanger",
+    "hange r": "hanger",
+    "h anger": "hanger",
+    "fl ange": "flange",
+    "f lange": "flange",
+    "flang e": "flange",
+    "ri gid": "rigid",
+    "rig id": "rigid"
+  }
+}

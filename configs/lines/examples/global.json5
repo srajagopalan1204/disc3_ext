@@ -1,0 +1,5 @@
+{
+   
+  "squelch_repeated_stars": true,       
+  "extra_separators": ["(", ")"]       
+}
