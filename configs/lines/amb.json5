@@ -1,0 +1,34 @@
+{
+  "pline3": "amb",
+  "synonyms": {
+    "box": "bx box",
+    "cu": "copper",
+    "w": "w/ clamp",
+    "rnd": "rnd round",
+    "bo": "box",
+    "enc": "enclosure",
+    "sq": "sq square",
+    "nk": "nk nickle",
+    "bx": "bx box",
+    "fb": "fb floor box"
+  },
+  "glue_bigrams": {
+    "bo x": "box",
+    "on bx": "on box",
+    "n ail": "nail",
+    "plast er": "plaster",
+    "plas ter": "plaster",
+    "enclos ure":"enclosure",
+    "enclosu re": "enclosure",
+    "e ars": "ears",
+    "ea rs": "ears",
+    "ear s": "ears",
+    "fl oor": "floor",
+    "nick r": "nickle receptacle",
+    "w bra": "w brass",
+    "wo rk": "work",
+    "enc w": "enclosed with",
+    "b ox": "box",
+    "bx w": "bx box with"
+  }
+}

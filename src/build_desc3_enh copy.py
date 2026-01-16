@@ -3,10 +3,8 @@
 
 """
 build_desc3_enh.py — Enhanced SAAMM → descrip3 (+ desc_src_www) builder
-v 128  (adds drop_tokens support from global/line json5)
-
-It includes everything we added plus the trailing feedback column in both QA and FINAL outputs.
-
+v 127
+FIt includes everything we added plus the trailing feedback column in both QA and FINAL outputs.
 features
 --------
 - JSON5-light configs: global + per-line, merged with precedence (CLI > line > global > defaults)
@@ -15,7 +13,6 @@ features
 - Remove runs of '*' (2+) as separators via config or CLI (--squelch-stars yes)
 - Synonyms (colors/materials/synonyms/pricing_synonyms) & GLUE bigrams
 - Multi-token synonym expansions (e.g., "pc" -> "pc pieces")
-- DROP TOKENS: remove junk tokens like "nan", "none", "null" from both outputs via config "drop_tokens"
 - Include/exclude 3-char line token (pline3) in descrip3 or desc_src_www independently
 - Append legacy part number (lookupnm) to end of descrip3 (not to desc_src_www)
 - Pricing join auto-detect (Item#/Part#/SKU), explicit override supported
@@ -25,6 +22,22 @@ features
 - QA + FINAL outputs, per-run log + manifest
 - QA includes `user24` (if present) and always includes a trailing `feedback` column
 - FINAL retains original SAAMM column order and appends `desc_src_www`, `trimmed_flag`, `feedback`
+
+Usage
+-----
+python src/build_desc3_enh.py \
+  --line cdw \
+  --saamm data/SAAMM_CDW.csv \
+  --pricing data/Pricing_CWD.xlsx \
+  --pricing-extra-cols "Manufacturer Description, SCOTT DESCRIPTION" \
+  --extra-into both \
+  --pricing-join-prefer auto \
+  --pline-in-descrip3 no \
+  --pline-in-www no \
+  --strip-parens yes \
+  --squelch-stars yes \
+  --out rep \
+  --mode writefinal
 """
 
 from __future__ import annotations
@@ -246,17 +259,6 @@ def detokenize(tokens: Iterable[str]) -> str:
     toks = [t for t in tokens if t]
     return " ".join(toks).strip()
 
-def _read_drop_tokens(cfg: dict) -> set:
-    """DROP TOKENS: normalize drop tokens to lowercase strings."""
-    raw = cfg.get("drop_tokens", []) or []
-    out = set()
-    if isinstance(raw, (list, tuple)):
-        for x in raw:
-            s = str(x).strip().lower()
-            if s:
-                out.add(s)
-    return out
-
 def build_row_fields(
     row: pd.Series,
     pricing_row: Optional[pd.Series],
@@ -300,11 +302,6 @@ def build_row_fields(
     tok = apply_synonyms(base_tokens, syn_map)
     tok = apply_glue(tok, glue_map)
 
-    # DROP TOKENS (e.g., nan/none/null)
-    drop_set = _read_drop_tokens(cfg)
-    if drop_set:
-        tok = [t for t in tok if t not in drop_set]
-
     # Remove pline token before optionally re-adding
     if pline3:
         tok = [t for t in tok if t != pline3]
@@ -327,11 +324,6 @@ def build_row_fields(
     if lookupnm:
         www_tokens = [t for t in www_tokens if t != lookupnm]
 
-    # DROP TOKENS also applied post-lookup filtering (belt + suspenders)
-    if drop_set:
-        descrip3_tokens = [t for t in descrip3_tokens if t not in drop_set]
-        www_tokens      = [t for t in www_tokens if t not in drop_set]
-
     # Handle extra_into by subtracting "extras-only" tokens where needed
     if extra_cols and extra_into in ("descrip3", "www", "none"):
         std_pr_descs = []
@@ -341,8 +333,6 @@ def build_row_fields(
                     std_pr_descs.append(str(pricing_row[name]))
         base_no_extra = toks_saamm + tokenize(" ".join(std_pr_descs), extra_seps=extra_seps, squelch_stars=squelch_stars) if pricing_row is not None else toks_saamm
         base_no_extra = apply_glue(apply_synonyms(base_no_extra, syn_map), glue_map)
-        if drop_set:
-            base_no_extra = [t for t in base_no_extra if t not in drop_set]
         if pline3:
             base_no_extra = [t for t in base_no_extra if t != pline3]
 
@@ -352,8 +342,6 @@ def build_row_fields(
                 if name in pricing_row and str(pricing_row[name]).strip():
                     extras_only += tokenize(str(pricing_row[name]), extra_seps=extra_seps, squelch_stars=squelch_stars)
         extras_only = apply_glue(apply_synonyms(extras_only, syn_map), glue_map)
-        if drop_set:
-            extras_only = [t for t in extras_only if t not in drop_set]
 
         from collections import Counter
         def remove_multiset(stream: List[str], to_remove: List[str]) -> List[str]:
@@ -533,8 +521,6 @@ def run(args: argparse.Namespace) -> None:
         f.write(f"descrip3_cap={descrip3_cap}\n")
         f.write(f"extra_separators={extra_seps}\n")
         f.write(f"squelch_repeated_stars={squelch_stars}\n")
-        # DROP TOKENS (for traceability)
-        f.write(f"drop_tokens={cfg.get('drop_tokens', [])}\n")
 
     # Manifest
     manifest = {
@@ -559,7 +545,6 @@ def run(args: argparse.Namespace) -> None:
             "pricing_join_col": join_col,
             "extra_separators": extra_seps,
             "squelch_repeated_stars": squelch_stars,
-            "drop_tokens": cfg.get("drop_tokens", []),
         }
     }
     with open(mani_path, "w", encoding="utf-8") as f:

@@ -1,0 +1,34 @@
+{
+  "pline3": "aml",
+  "synonyms": {
+    "wh": "white",
+    "led": "led",
+    "cord": "cord",
+    "adpt": "adpt adapter",
+    "drj": "drj driver",
+    "lt": "lt light",
+    "tl": "trulux tape light",
+    "in": "\" (inch)",
+    "blks": "blks blocks",
+    "brz": "brz bronze",
+    "prio": "piori",
+    "ctrl": "control ctrl",
+    "htl": "htl high output trulux tape light"
+  },
+  "glue_bigrams": {
+    "wh white": "white",
+    "wh led": "white led",
+    "wh undercabinet": "white under cabinet",
+    "l ight": "light",
+    "li ght": "light",
+    "lig ht": "light",
+    "ligh t": "light",
+    "mi crolink": "microlink",
+    "p riori": "priori",
+    "pr iori": "priori",
+    "pri ori": "priori",
+    "prio ri": "priori",
+    "prior i": "priori",
+    "piori ri": "priori"
+  }
+}

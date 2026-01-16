@@ -1,0 +1,9 @@
+{
+  "pline3": "acm",
+  "synonyms": {
+    "encp": "encp encapsulated",
+    "tfmr": "tfmr transformer",
+    "xfmr": "xfmr transformer"
+  },
+  "glue_bigrams": {}
+}

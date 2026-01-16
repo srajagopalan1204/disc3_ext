@@ -1,0 +1,18 @@
+{
+  "pline3": "air",
+  "synonyms": {
+    "ceil": "ceiling",
+    "wh": "white"
+  },
+  "glue_bigrams": {
+    "airmaster ma": "airmaster ma",
+    "ma rkii": "mark ii",
+    "barr el": "barrel",
+    "drive s": "drives",
+    "ro of": "roof",
+    "reflect ive": "reflective",
+    "reflec tive": "reflective",
+    "refle ctive": "reflective",
+    "s hutter": "shutter"
+  }
+}

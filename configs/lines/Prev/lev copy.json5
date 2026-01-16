@@ -1,40 +1,30 @@
 {
   "pline3": "lev",
-  "colors": {
+  "synonyms": {
+    "wh": "white",
     "bk": "black",
-    "br": "brown",
+    "rd": "red",
     "bu": "blue",
-    "blu": "blue",
     "gn": "green",
     "gy": "gray",
-    "or": "orange",
-    "pk": "pink",
-    "pr": "purple",
-    "rd": "red",
-    "wh": "white",
     "yl": "yellow",
-    "yel": "yellow"
-  },
-  "materials": {
-    "cu": "copper",
-    "al": "aluminum",
-    "zn": "zinc",
-    "ss": "stainless steel"
-  },
-  "synonyms": {
-    "term": "terminal",
-    "ton": "tongue",
-    "ambe": "amber",
-    "brs": "brass",
-    "btn": "button",
-    "bx": "box",
-    "dty": "duty",
-    "encl": "enclosure",
-    "ext": "extension",
-    "fla": "flanged",
-    "tamp": "tamper"
+    "br": "brown"
   },
   "glue_bigrams": {
+    "so cket": "socket",
+    "socke t": "socket",
+    "whi te": "white",
+    "whit e": "white",
+    "wi fi": "wifi",
+    "sol id": "solid",
+    "soli d": "solid",
+    "st rap": "strap",
+    "sw itch": "switch",
+    "switc h": "switch",
+    "wal l": "wall"
+  }
+}
+,
     "con n": "conn",
     "con nector": "Connector",
     "ta p": "tap",
@@ -102,6 +92,3 @@
     "wal l": "wall",
     "whi te": "white",
     "whit e": "white"
-  },
-
-}
