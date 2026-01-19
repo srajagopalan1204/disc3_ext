@@ -25,7 +25,8 @@
     "bk": "bk black",
     "gn": "gn green",
     "hz": "hz hertz",
-    "swbd": "swbd switchboard"
+    "swbd": "swbd switchboard",
+    "turn": "turn"
   },
   "glue_bigrams": {
     "m anual": "manual",
@@ -73,6 +74,9 @@
     "swi tch": "switch",
     "swit ch": "switch",
     "switc h": "switch",
+    "t urn": "turn",
+    "tu rn": "turn",
+    "tur n": "turn",
     "l ug": "lug",
     "off on": "off-on",
     "pb kit": "pb (push button) kit",

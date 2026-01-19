@@ -1,0 +1,22 @@
+{
+  "x": "y",
+  "fla": "fla full load amperage",
+  "aux": "auxiliary",
+  "encl": "enclosed",
+  "fvnr": "fvnr full load non-reversing",
+  "cont": "contact",
+  "hp": "hp horse power",
+  "man": "manual",
+  "mtr": "mtr motor",
+  "pb": "pb push button",
+  "enc": "enclosure",
+  "std": "standard",
+  "sw": "switch",
+  "hoa": "h-o-a",
+  "ind": "indicator",
+  "led": "led light emitting diode",
+  "mech": "mechanical",
+  "mnt": "mnt mount",
+  "mo": "momentary",
+  "swbd": "swbd switchboard"
+}

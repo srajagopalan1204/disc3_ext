@@ -1,0 +1,9 @@
+{
+  "pline3": "sia",
+  "synonyms": {
+    "x": "y"
+  },
+  "glue_bigrams": {
+    "l ug": "lug"
+  }
+}
